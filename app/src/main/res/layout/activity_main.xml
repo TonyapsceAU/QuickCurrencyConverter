@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/et_amount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="輸入金額"
+        android:inputType="numberDecimal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"/>
+
+    <!-- 來源幣別 - AutoCompleteTextView (佔用左側 50% 空間) -->
+    <AutoCompleteTextView
+        android:id="@+id/et_from_currency"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="來源幣別"
+        app:layout_constraintTop_toBottomOf="@id/et_amount"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/spinner_from_currency"
+        app:layout_constraintHorizontal_weight="1"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"/>
+
+    <!-- 來源幣別 - Spinner (佔用右側 50% 空間) -->
+    <Spinner
+        android:id="@+id/spinner_from_currency"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@id/et_from_currency"
+        app:layout_constraintBottom_toBottomOf="@id/et_from_currency"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/et_from_currency"
+        app:layout_constraintHorizontal_weight="1"
+        android:layout_marginStart="8dp"
+        android:minHeight="48dp" />
+
+    <!-- 目標幣別 - AutoCompleteTextView -->
+    <AutoCompleteTextView
+        android:id="@+id/et_to_currency"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="目標幣別"
+        app:layout_constraintTop_toBottomOf="@id/et_from_currency"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/spinner_to_currency"
+        app:layout_constraintHorizontal_weight="1"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"/>
+
+    <!-- 目標幣別 - Spinner -->
+    <Spinner
+        android:id="@+id/spinner_to_currency"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@id/et_to_currency"
+        app:layout_constraintBottom_toBottomOf="@id/et_to_currency"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/et_to_currency"
+        app:layout_constraintHorizontal_weight="1"
+        android:layout_marginStart="8dp"
+        android:minHeight="48dp" />
+
+
+    <!-- ... (按鈕和結果 TextView 保持不變) ... -->
+    <Button
+        android:id="@+id/btn_convert"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="轉換匯率"
+        android:elevation="10dp"
+        app:layout_constraintTop_toBottomOf="@id/et_to_currency"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"/>
+
+
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="結果將顯示在這裡"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/btn_convert"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
