@@ -22,8 +22,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    // 請替換為您的 API 金鑰！
-    private val API_KEY = "102f673577ce7d849d7b045a"
+    private val API_KEY = "您的金鑰貼在這裡"// 請替換為您的 API 金鑰！
     private val BASE_URL = "https://v6.exchangerate-api.com/"
     private var currencyCodes = emptyArray<String>()
 
